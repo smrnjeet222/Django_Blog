@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="content">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class='form-group'>
+      <legend class='border-bottom mb-4'>
+        Join Today
+      </legend>
+      {{ form|crispy}}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="Submit"> Sign Up</button>
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+      Alredy Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+    </small>  
+  </div>
+
+</div>
+
+
+{% endblock content %}
+
+{% block gif %}
+  <h4 class="text-center mb-4">Happy Blogging</h4>
+  <div class="tenor-gif-embed mx-auto" data-postid="12442336" data-share-method="host" data-width="95%" data-aspect-ratio="1.4352941176470588">
+{% endblock gif%}

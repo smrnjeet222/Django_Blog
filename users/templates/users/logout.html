@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<h2>You have been Logged Out</h2>
+
+<div class="border-top pt-3">
+<small class="text-muted">
+    <a class="btn btn-primary m-2" href="{% url 'login' %}">Login again!</a>
+    <a class="btn btn-success m-2" href="{% url 'blog-home' %}">Visit Blogs</a>
+</small>  
+</div>
+
+
+{% endblock content %}
+
+{% block gif %}
+  <div class="tenor-gif-embed mx-auto" data-postid="7616702" data-share-method="host" data-width="95%" data-aspect-ratio="2.0">
+{% endblock gif %}

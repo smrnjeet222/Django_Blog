@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="content">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class='form-group'>
+      <legend class='border-bottom mb-4'>
+        Delete Post
+      </legend>
+      <h3>Are you sure you want to delete the post "{{ object.title }}" ! </h3>
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-danger" type="Submit"> Yes, Delete </button>
+      <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}"> No, Take me back </a>
+    </div>
+  </form>
+</div>
+
+
+{% endblock content %}
+
+{% block gif %}
+  <h4 class="text-center mb-4">Happy Blogging</h4>
+  <div class="tenor-gif-embed mx-auto" data-postid="3915584" data-share-method="host" data-width="95%" data-aspect-ratio="1.7857142857142858">
+{% endblock gif%}

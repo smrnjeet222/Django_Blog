@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<article class="media content-section">
+  <img
+    class="rounded-circle article-img"
+    src="{{ object.author.profile.image.url }}"
+  />
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+      <small class="text-muted">{{ object.date_posted|date:"D, M. d Y" }}</small>
+    </div>
+    <h2 class='article-title'>{{ object.title }}</h2>
+    <p class="article-content">{{ object.content }}</p>
+  </div>
+</article>
+{% if user == object.author %}
+  <div class="text-right">
+    <a class="btn btn-secondary btn-sm m-1" href="{% url 'post-update' object.id %}">Update Blog</a>
+    <a class="btn btn-danger btn-sm m-1" href="{% url 'post-delete' object.id %}">Delete Blog</a>
+  </div>
+{% endif %}
+
+
+
+{% endblock content %} 
+
+{% block gif %}
+<div
+  class="tenor-gif-embed mx-auto"
+  data-postid="5065363"
+  data-share-method="host"
+  data-width="95%"
+  data-aspect-ratio="1.6712328767123288"
+>
+</div>
+
+{% endblock gif%}
+
+<div class="tenor-gif-embed" data-postid="5065363" data-share-method="host" data-width="100%" data-aspect-ratio="1.6712328767123288"><a href="https://tenor.com/view/michael-scott-its-britney-bitch-car-shade-the-office-gif-5065363">Michael Scott Its Britney Bitch GIF</a> from <a href="https://tenor.com/search/michaelscott-gifs">Michaelscott GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>

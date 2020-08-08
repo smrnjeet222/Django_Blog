@@ -1,0 +1,5 @@
+*.vscode
+__pycache__
+profile_pics/
+posts.json
+*.sqlite3
